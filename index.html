@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Contador</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height:  100vh;
+            background: black;
+            color: white;
+            display: grid;
+            place-items: center;
+        }
+        
+        section {
+            background: rgba(255, 255, 255, 20%);
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Contador</h1>
+    <p>Clique nos botões para alterar o valor.</p>
+    <div id="counter">
+        <button name="subtraiu" onclick="decrement()">-</button>
+        <span id="currentNumber">0</span>
+        <button name="adicionar" onclick="increment()">+</button>
+    </div>
+    <script src="assets/js/scripts.js"></script>
+    </section>
+    <script>
+
+        // estado da aplicação
+        let numero = 0
+
+        // alterando
+        function decrement() {
+            numero--
+            tela()
+        }
+
+        function increment() {
+            numero++
+            tela()
+        }
+
+        //aplicação na tela
+        function tela() {
+            const p = document.querySelector("p")
+            p.innerText = numero
+        }
+
+        // iniciar
+        tela()
+    </script>
+</body>
+</html>
